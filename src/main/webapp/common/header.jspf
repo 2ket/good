@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-
-<title>대한민국 1등 종합숙박웹 - 요기어때</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
-
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
        $(document).ready(function() {
@@ -85,9 +78,9 @@
         
     
     </script>
-</head>
 
-<body>
+
+<div class="wrap">
 	<div id="topbar">
 		<div id="topCenter">
 			<form class="srch">
@@ -135,6 +128,3 @@
 			</ul>
 		</div>
 	</div>
-</body>
-
-</html>

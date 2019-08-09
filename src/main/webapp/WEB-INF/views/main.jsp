@@ -6,13 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
+<!-- 
 #news {	position: absolute;
 	margin: 650px 0px 0px 300px;
 	font-size: 12px;}
-
+-->
 .table {
 	text-align: center;
-	position: absolute;
+	<!--position: absolute;-->
 	width: 1000px;
 	height: 100px;
 }
@@ -45,8 +46,9 @@
 	overflow: hidden;
 	padding: 78px 31px 0 31px
 }
-
+.recommend h2{display: block;margin:0;padding:0;border:0;box-sizing:border-box;margin-bottom: 35px;}
 .recommend li {
+	padding-left:108px;
 	overflow: hidden;
 	float: left;
 	position: relative;
@@ -188,11 +190,12 @@
 </head>
 
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 
 	<div class="mainContent"></div>
-	<div class="Content">
-	<div id="top-background"></div>
+	
+	<div id="top-background">여기</div>
+<div class="content">
 	<div id="second-menu">
 		<table class="table">
 			<tr>
@@ -208,10 +211,9 @@
 			</tr>
 		</table>
 	</div>
-	 <div id="news"> 
-		<h1>여기어때 소식</h1>
+	<!--  <div id="news"> --> 
 		<div class="recommend">
-
+			<h2>여기어때 소식</h2>
 			<ul>
 				<!-- target="_blank" : 새윈도우창을 열어서 웹페이즈 염. 기존창 남아있음 
           _self : 윈도우창에 그대로 현재프레임에 링크 열기
@@ -223,8 +225,7 @@
 						alt="여기어때 서체" /><strong>여기어때 서체 출시</strong>젊고 당당한 여기어때 잘난체<br />지금
 						다운로드 받으세요!</a></li>
 			</ul>
-			</div>
-	</div>
+		</div> <!-- //Recommend -->
 		<div class="appDown">
 			<p>
 				앱 다운 받고 <b>더 많은 혜택</b> 받으세요
@@ -237,8 +238,7 @@
 					src="imgs/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4.png" alt="앱스토어에서 다운" /></a>
 
 			</div>
-		</div>
-		<!-- //앱 다운로드-->
+		</div> 	<!-- //앱 다운로드-->
 		<div class="event_main">
 			<h2>이벤트</h2>
 			<section class="swiper-container swiper-container-horizontal">
@@ -298,9 +298,10 @@
 						class="swiper-pagination-bullet"></span>
 				</div>
 			</section>
+		</div><!-- //EVENT -->
 		</div>
-		</div>
-<%@include file="/common/footer.jsp"%>
+		<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+<%@include file="/common/footer.jspf"%>
 
 </body>
 </html>
