@@ -6,11 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-#news {
-	position: absolute;
+#news {	position: absolute;
 	margin: 650px 0px 0px 300px;
-	font-size: 12px;
-}
+	font-size: 12px;}
 
 .table {
 	text-align: center;
@@ -25,20 +23,19 @@
 }
 
 #top-background {
-	position: absolute;
-	background-image: url('imgs/bae.png');
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: 50% 100%;
-	margin: 0px 0px 0px -8px;
-	background-color: #F7323F;
-	width: 100%;
+	<!--position: absolute;-->
 	height: 450px;
+	background: #F7323F url('imgs/bae.png') 50% 100% no-repeat;
+	background-size: auto;
+	<!-- 
+	margin: 0px 0px 0px -8px;
+	width: 100%;
 	padding-left: 0px;
+	-->
 }
 
 #second-menu {
-	position: absolute;
+	<!--position: absolute;-->
 	margin: 470px 0px 0px 300px;
 }
 
@@ -194,6 +191,7 @@
 	<%@include file="/common/header.jsp"%>
 
 	<div class="mainContent"></div>
+	<div class="Content">
 	<div id="top-background"></div>
 	<div id="second-menu">
 		<table class="table">
@@ -210,7 +208,7 @@
 			</tr>
 		</table>
 	</div>
-	<div id="news">
+	 <div id="news"> 
 		<h1>여기어때 소식</h1>
 		<div class="recommend">
 
@@ -225,6 +223,8 @@
 						alt="여기어때 서체" /><strong>여기어때 서체 출시</strong>젊고 당당한 여기어때 잘난체<br />지금
 						다운로드 받으세요!</a></li>
 			</ul>
+			</div>
+	</div>
 		<div class="appDown">
 			<p>
 				앱 다운 받고 <b>더 많은 혜택</b> 받으세요
@@ -299,7 +299,7 @@
 				</div>
 			</section>
 		</div>
-		
+		</div>
 <%@include file="/common/footer.jsp"%>
 
 </body>

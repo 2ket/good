@@ -10,9 +10,7 @@
 	z-index: 220;
 }
 
-a {
-	text-decoration: none;
-}
+a {	text-decoration: none;}
 
 #topCenter {
 	position: absolute;
@@ -23,9 +21,7 @@ a {
 	margin: 0 auto;
 }
 
-ul, ol, li {
-	list-style: none;
-}
+ul, ol, li {list-style: none;}
 
 #logo {
 	position: absolute;
