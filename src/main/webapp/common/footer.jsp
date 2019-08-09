@@ -88,8 +88,8 @@ footer .ico a {
             </address>
             
             <div class="ico">
-                <a href="//www.facebook.com/goodchoiceofficial" target="_black" class="icon-ic_facebook"><img src="imgs/icon-ic_facebook.JPG"></a>
-                <a href="//blog.within.co.kr" target="_black" class="icon-ic_blog"><img src="imgs/icon-ic_blog.JPG"></a>
+                <a href="//www.facebook.com/goodchoiceofficial" target="_black" class="icon-ic_facebook"><img src="${pageContext.request.contextPath}/imgs/icon-ic_facebook.JPG"></a>
+                <a href="//blog.within.co.kr" target="_black" class="icon-ic_blog"><img src="${pageContext.request.contextPath}/imgs/icon-ic_blog.JPG"></a>
                
             </div>
             

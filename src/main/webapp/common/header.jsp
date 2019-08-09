@@ -6,265 +6,37 @@
 <meta charset="UTF-8">
 
 <title>대한민국 1등 종합숙박웹 - 요기어때</title>
-<style type="text/css">
-#topbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 72px;
-	transition: 0.4s;
-	background-color: #f7323f;
-	z-index: 220;
-}
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 
-a {
-	text-decoration: none;
-}
-
-#topCenter {
-	position: absolute;
-	left : 20%;
-	width: 1024px;
-	height: 64px;
-	background: none;
-	margin: 0 auto;
-}
-
-ul, ol, li {
-	list-style: none;
-}
-
-#logo {
-	position: absolute;
-	top: 26px;
-	left: 31px;
-	width: 96px;
-	height: 20px;
-	margin: 0;
-	background: url(imgs/h1_logo_pc_w.png) 0 0 no-repeat;
-	background-size: 96px auto;
-}
-
-#aLogo {
-	display: block;
-	text-indent: -9999px;
-	text-decoration: none;
-}
-
-#search {
-	position: absolute;
-	border: none;
-	text-indent: -9999px;
-	top: 22px;
-	z-index: 10;
-	width: 30px;
-	height: 30px;
-	background: url(imgs/ico_srch_2.png) 50% 50% no-repeat;
-	background-size: 24px auto;
-	right: 396px;
-}
-
-#searchClose {
-	position: absolute;
-	border: none;
-	text-indent: -9999px;
-	top: 22px;
-	right: 206px;
-	z-index: 10;
-	width: 30px;
-	height: 30px;
-	background: url(imgs/ico_close_2.png) 50% 50% no-repeat;
-	background-size: 24px auto;
-}
-
-button {
-	padding: 0;
-	cursor: pointer;
-	box-sizing: border-box;
-	margin: 0em;
-	font: 400 13.3333px Arial;
-	word-spacing: normal;
-	text-transform: none;
-	text-indent: 0px;
-	text-shadow: none;
-	display: inline-block;
-	text-align: center;
-	align-items: flex-start;
-	text-rendering: auto;
-}
-
-.menubar {
-	display: inline-block;
-	position: absolute;
-	top: 7px;
-	right: 31px;
-	width: 1600px;
-	text-align: right;
-	list-style: none;
-}
-
-.menubar li {
-	display: inline-block;
-	position: relative;
-	min-width: 53px;
-	min-height: 35px;
-	margin-left: 30px;
-	vertical-align: top;
-}
-
-.menubar li a {
-	display: inline-block;
-	font-size: 18px;
-	color: #ffffff;
-	letter-spacing: 0;
-}
-
-.menubar li button {
-	border: none;
-	padding: 0;
-	background: none;
-	font-size: 18px;
-	line-height:;
-	color: #ffffff;
-	letter-spacing: 0;
-}
-
-button span {
-	position: relative;
-}
-
-.menubar li ul {
-	display: none;
-	position: absolute;
-	border-radius: 5px;
-	padding: 10px; /*이부분수정함*/
-	background: #fff;
-	text-align: left;
-	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-}
-
-.menubar li:hover ul {
-	display: block;
-	/* 마우스 커서 올리면 서브메뉴 보이게 하기 */
-	font-size: 14px;
-	line-height: 1;
-	min-width: auto;
-	min-height: auto;
-	margin: 0 0 14px 0;
-	vertical-align: top;
-}
-
-.menubar li:hover ul a {
-	color: #000000;
-}
-
-.list_03 {
-	top: 30px;
-	left: -65px;
-	width: 184px;
-}
-/*없어도되는듯
-        .menubar li ul li button {
-            overflow: visible !important;
-            display: block;
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            width: auto !important;
-            height: auto !important;
-            margin: 0;
-            font-size: 16px;
-        }
-        */
-.mainContent {
-	height: 2000px;
-	width: auto;
-	background-color: rgba(0, 0, 0, 0.5);
-	margin: 0px auto;
-	padding: 0px auto;
-	border: 0px;
-	left: 0;
-	right: 0;
-	position: absolute;
-	z-index: 30
-}
-
-.srch_bar {
-	position: absolute;
-	top: 72px;
-	left: 200px;
-	width: 60%;
-	height: 280px;
-	background-color: #ffffff;
-	border: 1px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-.srch_bar ul li {
-	margin-left: 10px;
-	margin-bottom: 3px;
-}
-
-.srch_bar li a {
-	color: green;
-}
-
-#keyword {
-	position: absolute;
-	left: 240px;
-	top: 22px;
-	width: 500px;
-	height: 25px;
-	font-size: 16px;
-	background-color: transparent;
-	border: none;
-	color: #ffffff;
-}
-
-#keyword::placeholder {
-	color: #ffffff;
-}
-
-#search2 {
-	position: absolute;
-	border: none;
-	text-indent: -9999px;
-	top: 22px;
-	right: 596px;
-	z-index: 310;
-	width: 30px;
-	height: 30px;
-	background: url(imgs/ico_srch_2.png) 50% 50% no-repeat;
-	background-size: 24px auto;
-}
-</style>
-<script src="js/jquery-1.12.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
        $(document).ready(function() {
+           $('#logo').css('background', 'url(https://lh3.googleusercontent.com/VAIw4PJdn9A-RI9jmf9vfrBoLk39xE8LAdUIJ7q_1VfybnnEctlgyImg7OxWUot2l02NptxLP_uDRs21WJdYpCdOBKh4mCKYjYT8MbqsgW078YX71DjV5OfhizJcBUa7-EmA1-OWH_s_mCA5XSM4BRc9N7Vf0E_Vd0Jz_Qvr11jbv5TpyQnli3th2eRj5E6ws_lZ0TcK2S9oLDArzWMiWrZcLWizX00JHi9lTClWpxHDVldfGCvDcaCPqf5gBbBfh-MMhUUYixFiAA_pG85051i9mU0pmhCh27HKYGmVVHc1oglnRHyhCEOgvtPxnpGLlHNieS36ghLeSEvtehhznHLFu3qs480cWFHzMKo14g8eNYTXVxiUbdbnHgpsKxHc48IL9eYbi9Ccb_9AuGUYOwSnduPquIy2oXEycdfiVhSuWLuLl9PlKA8hQXJwx_9OrNo22Ahu9iaUy-xphifGeyK6U3RBALlARQHg0IidFhbM0_bZ2S87zNHsy14yTsXxhCOp8POsyIqJ-tXw1E8j2gvL2p2u1z6nzQtmhFmsnShFqMqm-moSOnzXwckEsi0uEcivxesR2V-_hc5rxTzDA1acffaRF03beE3mCvlkDmHJaLspDJs32xa-1l5Q-6j4mmSFmyTcbuyk4VJ0OlPHSiU=w96-h21-no) 0 0 no-repeat');
+           $('#search').css('background', 'url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
+           $('#search2').css('background', 'url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
+           $('#searchClose').css('background', 'url(https://lh3.googleusercontent.com/QzHFiRfPpCnjMTtyayToibfqL2yua1UpK0avuDodigx-qEfB1X1AmhP-7Y8E6C4uiaEZLwX482l4ZWBYSql__bu3JqUiVFy76ARbb_YsI3mXknpJnJ0VdLJgT4VPw3WzSwjPe4JEtD68BjGpMA66wXy5Sux7mv4Bv4UMmTOBAq1wDG0eQMJVxsVGi5XJdWevX1J-U28IzM3Eyh5NzWWMXyrKoADSkojOdmggP3UQ2UeHmFD143UHiBBdCeDd9_bwVseDwPf4EdI4OGa5vWp1c7euYeR_r43qSE8MmimN-Am0l4aBdDZZe0x0amB0slFKHnrmUyZrnTS_J8jWRwJq-vU-4MBB8-IkBEt-W3uxEV0suLbP0zg3fqpoZq1yAOQCZJTAlfKnKmtv69TLIakhoTBC5FTCZBctGr6Qd3EElrGedl89IFfaE2Qa5c3l5QA99LRCFloujbwDgGwcuktTyLcR7xymEGhUvWPk0RS1azww2WawZMdXBVCAYlH7gZHdIRie9J1MiQzTd8HeScH3ErCAAFVLSRYS9lpLga766ZW9HXdtlnk2xtvQ0fjj6VY_ADs4ElEkMZG3bpax8Ghtu8yIjunl5FS0MRtDSLyco_joyDxap46avIurwefHX7lx3khdxWI9CNprrq9C5Pl0ht8=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
-                if (scroll > 30) {
+                if (scroll > 0) {
                     $("#topbar").css("background", "#ffffff");
                     $(".menubar li a").css("color", "#000000");
                     $(".menubar li button").css("color", "#000000");
-                    $('#logo').css('background', 'url(imgs/h1_logo_pc.png) 0 0 no-repeat');
-                    $('#search').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
-                    $('#search2').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#logo').css('background', 'url(https://lh3.googleusercontent.com/0N7ngIeN-8qsvMSVuMNWwL2_S6kq8msWPveqVWAAsy0dJ_NFLXCIBAoue1RPufxM_O9_BS_V3q9n016TeF1b6qtmVDjOtxSTND0oGEzaNJSKg0cIAKoda68iUGJpiYSofEh5IfiCLdqrmiyV9ZOrmkcV-Q4rV8yF9c-7LdedWzeQ8HUiiuh0olU8V2EiDhdzuQwcW5YiLuGZaaoJPd4mb7NtVUKtJ7ebxAq3DQbfOzy8p2Gg3ni1vLt_CnL29KogTOPsqF1V-sPsrfamxD5af8XVw_XZLvqfGv1VK6WIFC-ViZpsRSPr0bRngJEn5kepVa2iQkTu4FsGOxA7zA1NxCxaNONcjU2SqXBCstHxwEuao64KKNpwQqRdVs3tev8qUPWu-f37dIa1OSZ4hp2Ed6YZiGwl-1LXBXfmYrb9D0Xul4n-5tT-_2JFUy8_cnnLHcdsL_ggWMmiXPTjz7fZDRPJvIrOj0sE9nAYOsMpbiUnXA58MQ5zyRBC1z2zCJ0Av1fPlm-ih0jS78iGdR0wvillLtNOuBT7huXM0yrKkmfCESqPaoSfROfw61oc6MjrtwqFIJxXnh8UoS2m9gkKFJhUboDSTsZU4YBkPgbYy6I7Zp-0B074I3ZjhQdKYRFpxA9sLhfp0_mKPdEG-YeXseA=w96-h21-no) 0 0 no-repeat');
+                    $('#search').css('background', 'url(https://lh3.googleusercontent.com/JEQ9MYc7tMopQnbA2yDBOo6iUA3XS-JBNslw33SwfCxX4XHNLYKVG9aH3kpgSmGCQ2FKeXyrNAI7X9B5kJml9o-GjM087yAjNWx5DJhTZ3I8shaZUZcF0YJeoV4XTIn249sBqbKwuXewmOZ6T0tBz-NogKEW3SPsMVyJe4QkG7QAmSQ25RWG2iuwqvjkPzuD-d2ErpTFJQF1fx4018YoHjFsk3G4il5T0t4H-hih2a26nca81I9CZBneSWnIqJx2EB-Ms67O128O9CED0WIW4-n-9M9V8xBda9GNmuzaVEebdKLc5ag0YLZA-hsDra3uqQuz95fnrZc0n7bXN7qM5a_HtrSLSN4JceCG1A05cPVRzt-KyvZxG7i0rrY8duKzUT8Y5eiHwhhTU7MttAOJVaOblS0-rnfc352pTt5HU5tWDSdkW-uChyY8qBkTP-PPNOuJCvELWygH7qDdvWvN4BfY7IqYADXmcj8NHHzvPr0jOia0SHil76JjvwMCG3PhVwqMmMXJ5fy2o_6mN-enIPPe78t4dAVuaap16rP088r_5wwCLk0iRFJJr0jVd7F5fAxhwiJhRf4P1T1nwE9CAE0j6wZi1DQ4W5qEoRkqpbNNvxVBBWi-BXqC6ngQ3SZG3GrnO-m09azeMy2wgU7DA8M=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#search2').css('background', 'url(https://lh3.googleusercontent.com/JEQ9MYc7tMopQnbA2yDBOo6iUA3XS-JBNslw33SwfCxX4XHNLYKVG9aH3kpgSmGCQ2FKeXyrNAI7X9B5kJml9o-GjM087yAjNWx5DJhTZ3I8shaZUZcF0YJeoV4XTIn249sBqbKwuXewmOZ6T0tBz-NogKEW3SPsMVyJe4QkG7QAmSQ25RWG2iuwqvjkPzuD-d2ErpTFJQF1fx4018YoHjFsk3G4il5T0t4H-hih2a26nca81I9CZBneSWnIqJx2EB-Ms67O128O9CED0WIW4-n-9M9V8xBda9GNmuzaVEebdKLc5ag0YLZA-hsDra3uqQuz95fnrZc0n7bXN7qM5a_HtrSLSN4JceCG1A05cPVRzt-KyvZxG7i0rrY8duKzUT8Y5eiHwhhTU7MttAOJVaOblS0-rnfc352pTt5HU5tWDSdkW-uChyY8qBkTP-PPNOuJCvELWygH7qDdvWvN4BfY7IqYADXmcj8NHHzvPr0jOia0SHil76JjvwMCG3PhVwqMmMXJ5fy2o_6mN-enIPPe78t4dAVuaap16rP088r_5wwCLk0iRFJJr0jVd7F5fAxhwiJhRf4P1T1nwE9CAE0j6wZi1DQ4W5qEoRkqpbNNvxVBBWi-BXqC6ngQ3SZG3GrnO-m09azeMy2wgU7DA8M=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
                     $('.list_03 li a').css('color', '#000000');
-                    $('#searchClose').css('background', 'url(imgs/ico_close.png) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#searchClose').css('background', 'url(https://lh3.googleusercontent.com/23-SgXLUJxcdCO9f7-GsMfCxTpyD_mafCOGjiKAi8r-w3wcSmmdzsKwXFpT1Ag6NNhEgZkrxYm3iNspTb0SYLDKckr2qqFJJ6Td89CLaSt4JTJfnOEDurCER2NUGFQKoQGmhKD6z_KsKaRPYl2dklBK7b4y4jTzjtJkL4LdqD3Pt1vzeYBraPyAIUcdriGsTBsVAznfQRO62_SXXKpIYXF8riyVrGO1Chmct6Q5UJ7q5yEkZsIpQxXQnnnkrTPaZ7OD6Ye7MkAWGYLpvPfgl4Asb4JL6dQdZy5ByP2LWrOc5Pil4oy5Y9K1iPvXoH24zXdbg0PQa1gbqMwlG3nPDS4ja8vBedx_IHBdXnqwfcoSDVXZZAvByQCRdSUUwR0zhNyy0zlNQlUHvW5BFLzTsH43XXF9kJy8e4Tp1QKFnuXMdeKTWdE3by4ENpLn6KOQKtd4ZaIcLc9mKHqEySTB7lsZukZz9jawgCiaU863hHNefOzhcJHxHmLueSp0z_JhUQOwlUzkUztmc5vfTmgbAxHfLxbN877yMEoXeN-qjljxglbuSWLcPcwkNdt3IxmBYCsE8Tv1PvzkVxHYJRQEgVjn2rHUL6cBMcL7YiDkLXia-X5Bvd95BL_Ss87qIFDM2vZXkeklmWegyYPTdY6FVKc0=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
                     $('#keyword').css('color','#000000');
 
                 } else {
                     $("#topbar").css("background", "#f7323f");
                     $(".menubar li a").css("color", "#ffffff");
                     $(".menubar li button").css("color", "#ffffff");
-                    $('#logo').css('background', 'url(imgs/h1_logo_pc_w.png) 0 0 no-repeat');
-                    $('#search').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-                    $('#search2').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#logo').css('background', 'url(https://lh3.googleusercontent.com/VAIw4PJdn9A-RI9jmf9vfrBoLk39xE8LAdUIJ7q_1VfybnnEctlgyImg7OxWUot2l02NptxLP_uDRs21WJdYpCdOBKh4mCKYjYT8MbqsgW078YX71DjV5OfhizJcBUa7-EmA1-OWH_s_mCA5XSM4BRc9N7Vf0E_Vd0Jz_Qvr11jbv5TpyQnli3th2eRj5E6ws_lZ0TcK2S9oLDArzWMiWrZcLWizX00JHi9lTClWpxHDVldfGCvDcaCPqf5gBbBfh-MMhUUYixFiAA_pG85051i9mU0pmhCh27HKYGmVVHc1oglnRHyhCEOgvtPxnpGLlHNieS36ghLeSEvtehhznHLFu3qs480cWFHzMKo14g8eNYTXVxiUbdbnHgpsKxHc48IL9eYbi9Ccb_9AuGUYOwSnduPquIy2oXEycdfiVhSuWLuLl9PlKA8hQXJwx_9OrNo22Ahu9iaUy-xphifGeyK6U3RBALlARQHg0IidFhbM0_bZ2S87zNHsy14yTsXxhCOp8POsyIqJ-tXw1E8j2gvL2p2u1z6nzQtmhFmsnShFqMqm-moSOnzXwckEsi0uEcivxesR2V-_hc5rxTzDA1acffaRF03beE3mCvlkDmHJaLspDJs32xa-1l5Q-6j4mmSFmyTcbuyk4VJ0OlPHSiU=w96-h21-no) 0 0 no-repeat');
+                    $('#search').css('background', 'url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#search2').css('background', 'url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
                     $('.list_03 li a').css('color', '#000000');
-                    $('#searchClose').css('background', 'url(imgs/ico_close_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
+                    $('#searchClose').css('background', 'url(https://lh3.googleusercontent.com/QzHFiRfPpCnjMTtyayToibfqL2yua1UpK0avuDodigx-qEfB1X1AmhP-7Y8E6C4uiaEZLwX482l4ZWBYSql__bu3JqUiVFy76ARbb_YsI3mXknpJnJ0VdLJgT4VPw3WzSwjPe4JEtD68BjGpMA66wXy5Sux7mv4Bv4UMmTOBAq1wDG0eQMJVxsVGi5XJdWevX1J-U28IzM3Eyh5NzWWMXyrKoADSkojOdmggP3UQ2UeHmFD143UHiBBdCeDd9_bwVseDwPf4EdI4OGa5vWp1c7euYeR_r43qSE8MmimN-Am0l4aBdDZZe0x0amB0slFKHnrmUyZrnTS_J8jWRwJq-vU-4MBB8-IkBEt-W3uxEV0suLbP0zg3fqpoZq1yAOQCZJTAlfKnKmtv69TLIakhoTBC5FTCZBctGr6Qd3EElrGedl89IFfaE2Qa5c3l5QA99LRCFloujbwDgGwcuktTyLcR7xymEGhUvWPk0RS1azww2WawZMdXBVCAYlH7gZHdIRie9J1MiQzTd8HeScH3ErCAAFVLSRYS9lpLga766ZW9HXdtlnk2xtvQ0fjj6VY_ADs4ElEkMZG3bpax8Ghtu8yIjunl5FS0MRtDSLyco_joyDxap46avIurwefHX7lx3khdxWI9CNprrq9C5Pl0ht8=s72-no) 50% 50% no-repeat').css('background-size', '24px auto');
                     $('#keyword').css('color','#ffffff');
                     
                 }
@@ -275,7 +47,7 @@ button span {
 
                     var srch_bar = $('.srch');
                     srch_bar.hide();
-                    $('.mainContent').hide();
+                   $('.mainContent').hide();
                 });
         $(document).ready(function() {
                     var position;
@@ -354,7 +126,7 @@ button span {
 						<li><a href="#">공지사항</a></li>
 						<li><a href="event.jsp">이벤트</a></li>
 						<li><a href="#">혁신 프로젝트</a></li>
-						<li><a href="#">자주 묻는 질문</a></li>
+						<li><a href="/goodchoice/more/faq">자주 묻는 질문</a></li>
 						<li><a href="#">1:1 문의</a></li>
 						<li><a href="#">약관 및 정책</a></li>
 					</ul>
@@ -364,4 +136,5 @@ button span {
 		</div>
 	</div>
 </body>
+
 </html>
